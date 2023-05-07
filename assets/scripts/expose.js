@@ -45,7 +45,7 @@ function init() {
       icon.alt = "Volume level 1";
     } else if (vol < 67) {
       icon.src = "assets/icons/volume-level-2.svg";
-      volumeIcon.alt = "Volume level 2";
+      icon.alt = "Volume level 2";
     } else {
       icon.src = "assets/icons/volume-level-3.svg";
       icon.alt = "Volume level 3";
