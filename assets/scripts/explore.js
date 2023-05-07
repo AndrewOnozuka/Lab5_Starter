@@ -31,6 +31,7 @@ function init() {
   if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = populateVoiceList;
   };
+  synth.onvoiceschanged = populateVoiceList;
 
   // button
   const button = document.querySelector("button");
