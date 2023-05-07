@@ -2,8 +2,6 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
-
-
 function init() {
   // initialize
   let imgs = document.querySelectorAll("img");
