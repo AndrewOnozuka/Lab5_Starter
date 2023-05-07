@@ -11,28 +11,22 @@ function init() {
 
   // loading and updating voices
   let voices = [];
+  populateVoiceList();
+  synth.onvoiceschanged =(e) => {
+    populateVoiceList();
+  }
+
   function populateVoiceList() {
     voices = synth.getVoices();
   
     for (let i = 0; i < voices.length; i++) {
       const option = document.createElement("option");
-      option.textContent = `${voices[i].name} (${voices[i].lang})`;
-  
+      option.textContent = voices[i].name;
       if (voices[i].default) {
         option.textContent += " — DEFAULT";
       }
-  
-      option.setAttribute("data-lang", voices[i].lang);
-      option.setAttribute("data-name", voices[i].name);
       voiceSelect.appendChild(option);
     }
-  }
-  populateVoiceList();
-  if (speechSynthesis.onvoiceschanged !== undefined) {
-    speechSynthesis.onvoiceschanged = populateVoiceList;
-  };
-  synth.onvoiceschanged = function(e) {
-    populateVoiceList();
   }
 
   // button
