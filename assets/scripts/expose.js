@@ -36,6 +36,7 @@ function init() {
   let volControls = document.getElementById("volume-controls");
   volControls.addEventListener("change", function(e) {
     let vol = e.target.value;
+    let maxvol = e.target.max;
     if (vol == 0) {
       icon.src = "assets/icons/volume-level-0.svg";
       icon.alt = "Volume level 0";
@@ -49,7 +50,7 @@ function init() {
       icon.src = "assets/icons/volume-level-3.svg";
       icon.alt = "Volume level 3";
     }
-    audio.volume = vol/vol.max;
+    audio.volume = vol/maxvol;
   });
 
   // button
@@ -57,7 +58,7 @@ function init() {
   let button = document.querySelector("button");
   button.addEventListener("click", function() {
     audio.play();
-    if (hornSelect.value == "party-horn") {
+    if (horn.value == "party-horn") {
       jsConfetti.addConfetti();
     }
   });
