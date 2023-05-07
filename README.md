@@ -1,6 +1,6 @@
 # Lab 5
 
-Andrew Onozuka
+Andrew Onozuka <br>
 Partner: Vivin Vinil
 
 - Continuous Integration [**introduction-to-github**](https://github.com/AndrewOnozuka/introduction-to-github) repo
